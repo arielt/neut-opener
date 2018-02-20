@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Neut Opener",
+    "description": "Open URLs from the list with given interval",
+    "version": "0.1",
+    "icons": {
+        "128": "src/no.png"
+    },
+    "background": {
+        "scripts": ["src/background_page.js"]
+    },
+    "browser_action": {
+        "default_icon": "src/no.png",
+        "default_popup": "src/popup.html"
+    },
+    "permissions": [
+        "tabs",
+        "<all_urls>"
+    ]
+}

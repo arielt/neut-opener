@@ -1,0 +1,4 @@
+#!/bin/bash
+
+jsLint src/background_page.js
+jsLint src/popup.js
