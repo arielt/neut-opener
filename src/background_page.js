@@ -39,4 +39,8 @@ function backgroundJob() {
     }
 }
 
+// run first job immediatelly
+backgroundJob();
+
+// schedule following jobs
 setInterval(backgroundJob, INTERVAL * 1000);
