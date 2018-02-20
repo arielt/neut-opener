@@ -11,4 +11,9 @@ Supported browsers:
 
 ## List of URLs
 
+Update list of URLs in background_page.js: URL_LIST.
+URLs will be matched exactly.
+
 ## Interval
+
+Update INTERVAL in background_page.js, time is in seconds.
