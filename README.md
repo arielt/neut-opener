@@ -11,9 +11,13 @@ Supported browsers:
 
 ## List of URLs
 
-Update list of URLs in background_page.js: URL_LIST.
+Update list of URLs in src/background_page.js: URL_LIST.
 URLs will be matched exactly.
+
+Remember, browser usually doesn't show trailing slash
+if the path is empty, meaning 'https://www.google.com/' is displayed as 'https://www.google.com'.
+To make sure you put the right URL in the list, type it in the browser, load and copy it out.
 
 ## Interval
 
-Update INTERVAL in background_page.js, time is in seconds.
+Update INTERVAL in src/background_page.js, time is in seconds.
