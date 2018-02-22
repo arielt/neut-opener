@@ -8,7 +8,8 @@ var INTERVAL = 60;
 // list of URLS to check
 var URL_LIST = [
     'https://www.google.com/',
-    'https://www.facebook.com/'
+    'https://www.facebook.com/',
+    'https://www.youtube.com/watch?v=pSABKRTtJM8&list=RDpSABKRTtJM8'
 ];
 
 function refreshOpenTab(url) {
