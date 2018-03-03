@@ -5,13 +5,19 @@
 // interval to open / refresh tabs in seconds
 var INTERVAL = 60;
 
-// list of URLS to check
+// list of URLs to check
 var URL_LIST = [
-    'https://www.google.com/',
-    'https://www.facebook.com/',
-    'https://www.youtube.com/watch?v=pSABKRTtJM8&list=RDpSABKRTtJM8'
+    'https://vimeo.com/242439781?autoplay=1&autopause=0',
+    'https://vimeo.com/257848317?autoplay=1&autopause=0'
 ];
 
+var createdTabIds = [];
+
+function createCallback(tab) {
+    createdTabIds.push(tab.id);
+}
+
+// old implementation, not in use
 function refreshOpenTab(url) {
     var code = 'window.location.reload();';
 
@@ -33,10 +39,17 @@ function refreshOpenTab(url) {
 }
 
 function backgroundJob() {
-    var i;
+    var i, url;
 
+    // close created tabs
+    chrome.tabs.remove(createdTabIds);
+    createdTabIds = [];
+
+    // open tabs
     for (i = 0; i < URL_LIST.length; i += 1) {
-        refreshOpenTab(URL_LIST[i]);
+        // refreshOpenTab(URL_LIST[i]);
+        url = URL_LIST[i];
+        chrome.tabs.create({ url: url }, createCallback);
     }
 }
 
